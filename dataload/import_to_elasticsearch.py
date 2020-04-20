@@ -170,7 +170,18 @@ def maybe_create_index(index_name=ES_INDEX):
                     "geographic code (from GIFTS)": {"type": "text"}
                 }
             }
-        }
+        },
+        "_default_": {
+            "dynamic_templates": [{
+                "unknown_to_strings": {
+                    "match_mapping_type": "string",
+                    "mapping": {
+                        "type": "text",
+                        "fielddata": True
+                    }
+                }
+            }]
+        },
     }
 
     settings = {
