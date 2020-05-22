@@ -5862,7 +5862,7 @@ body {
 
 .home-number-text {
   font-size: 30px;
-  color: #663a0e;
+  color: #fff;
   font-weight: 400;
   /* letter-spacing: 2px; */
   margin-top: 0px; }
@@ -5882,7 +5882,7 @@ body {
   padding: 10px; }
 
 .stat-group a:hover {
-  background-color: #f77f03;
+  background-color: #A7531D;
   text-decoration: none;
   border-radius: 12px; }
 
@@ -6157,7 +6157,7 @@ input:-moz-placeholder {
   margin: 0 auto;
   padding: 10px 20px;
   border-radius: 12px;
-  border: 2px solid #A7531D;
+  border: 0px solid #A7531D;
   background-color: #FFF;
   font-size: 28px;
   height: 79px; }
@@ -6175,7 +6175,7 @@ input:-moz-placeholder {
   text-align: right; }
 
 .search-help a, #forum_link, #help_link {
-  color: #414141; }
+  color: #fff; }
 
 .navbar-nav > li > a {
     padding-top: 12px;
