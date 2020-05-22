@@ -208,7 +208,10 @@ def orgs_csv_paged(data, org_type):
 
 
 def get_pagination(request, context, page):
-    total_pages = math.ceil(context['results']['hits']['total']['value'] / SIZE)
+    total = context['results']['hits']['total']
+    if isinstance(total, dict):
+        total = total['value']
+    total_pages = math.ceil(total / SIZE)
     if page < total_pages:
         context['next_page'] = request.path + '?' + urlencode({"json_query": context['json_query'], 'page': page + 1})
     if page != 1 and total_pages > 1:

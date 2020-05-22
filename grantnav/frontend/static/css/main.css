@@ -188,7 +188,7 @@ select.front_search	{
   display: inline-block;
   vertical-align: top;
   width: 24%;
-  background-color: #d66f05;
+  background-color: #A7531D;
   border-radius: 12px;
   height: 79px;
   border: none;
@@ -197,7 +197,7 @@ select.front_search	{
   outline: none;
   box-sizing: border-box;
   padding-left: 10px;
-  background: #d66f05 url("../images/arrow.png") no-repeat scroll 98% center / 15% auto;  /* Custom select arrow for dropdown */
+  background: #A7531D url("../images/arrow.png") no-repeat scroll 98% center / 15% auto;  /* Custom select arrow for dropdown */
   -webkit-appearance: none;
   -moz-appearance: none;
    appearance: none;
@@ -253,7 +253,10 @@ select.front_search	{
     margin-bottom: 0px;
 }
 
-.filters .panel-default, .filters .list-group-item, .filters .panel-heading{
+.filters .panel-default {
+    border-color: #506867;
+}
+.filters .list-group-item, .filters .panel-heading{
     border-color: #ccc;
 }
 
@@ -354,4 +357,8 @@ select.front_search	{
     color: #000;
 }
 
-
+.navbar-logo {
+  width: 220px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
