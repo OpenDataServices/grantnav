@@ -291,6 +291,9 @@
             <a href="{% url 'search.csv' %}?{{ query_string }}">
               <img src="{% static 'images/csv_download_icon.png' %}" alt="Download CSV" class="download_button" id="csv_download_button"/>
             </a>
+            <a href="https://insights.threesixtygiving.org/?url=https://grantnav.threesixtygiving.org{% url 'search.json' %}?{{ query_string }}" title="Download search results into Insights data visualiser" target="_blank">
+              <img src="{% static 'images/insights_download_icon.png' %}" alt="Download to Insights" class="download_button" id="insights_download_button"/>
+            </a>
           </div>
         </div>
       </div>

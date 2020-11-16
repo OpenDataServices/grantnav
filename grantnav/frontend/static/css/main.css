@@ -327,7 +327,10 @@ select.front_search	{
   margin-left: 5px;
 }
 
-#json_download_button, #csv_download_button, #files_help_link {
+#insights_download_button,
+#json_download_button,
+#csv_download_button,
+#files_help_link {
   margin-top: 20px;
   margin-bottom: 20px;
 }

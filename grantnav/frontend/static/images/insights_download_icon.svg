@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="26.945122mm"
+   height="6.3930693mm"
+   viewBox="0 0 26.945122 6.3930693"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="insights_download_icon.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="416.32846"
+     inkscape:cy="17.761398"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="2560"
+     inkscape:window-height="1376"
+     inkscape:window-x="1920"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:snap-grids="false"
+     inkscape:snap-to-guides="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <sodipodi:guide
+       position="31.702754,74.933792"
+       orientation="0,1"
+       id="guide845"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="29.151414,81.359382"
+       orientation="0,1"
+       id="guide849"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="14.126854,0.47248315"
+       orientation="0,1"
+       id="guide37"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="10.134484,0.47248315"
+       orientation="0,1"
+       id="guide39"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="24.284963,1.316103e-05"
+       orientation="0,1"
+       id="guide41"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="21.308403,5.6224131"
+       orientation="0,1"
+       id="guide43"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="21.261163,6.4256031"
+       orientation="0,1"
+       id="guide45"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="3.9590372e-06,-3.2364068"
+       orientation="1,0"
+       id="guide47"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="17.056174,1.316103e-05"
+       orientation="1,0"
+       id="guide49"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="6.2366139,8.2209931"
+       orientation="1,0"
+       id="guide51"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="7.4059639,5.8822631"
+       orientation="1,0"
+       id="guide53"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Michael Wood</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-180.8616,-174.19028)">
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.85317945px;line-height:125%;font-family:'Ostrich Sans';-inkscape-font-specification:'Ostrich Sans Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#636363;fill-opacity:1;stroke:#636363;stroke-width:0.10279771px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="187.63406"
+       y="180.51529"
+       id="text821"
+       transform="scale(1.0025356,0.99747082)"
+       inkscape:export-filename="/home/michael/dev/ods/threesixtygiving/grantnav/grantnav/frontend/static/images/insights_download_icon.png"
+       inkscape:export-xdpi="100.86426"
+       inkscape:export-ydpi="100.86426"><tspan
+         sodipodi:role="line"
+         id="tspan819"
+         x="187.63406"
+         y="180.51529"
+         style="font-style:normal;font-weight:bold;fill:#636363;fill-opacity:1;stroke:#636363;stroke-width:0.10279771px;stroke-opacity:1">INSIGHTS</tspan></text>
+    <rect
+       style="opacity:1;fill:#313131;fill-opacity:1;stroke:none;stroke-width:0.17838389;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect851"
+       width="1.5568084"
+       height="3.35817"
+       x="180.8616"
+       y="177.22514"
+       rx="0"
+       ry="0"
+       inkscape:export-filename="/home/michael/dev/ods/threesixtygiving/grantnav/grantnav/frontend/static/images/insights_download_icon.png"
+       inkscape:export-xdpi="100.86426"
+       inkscape:export-ydpi="100.86426" />
+    <rect
+       style="opacity:1;fill:#313131;fill-opacity:1;stroke:none;stroke-width:0.18547617;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect851-1"
+       width="2.3814826"
+       height="2.3733151"
+       x="181.75696"
+       y="178.21001"
+       rx="0"
+       ry="0"
+       inkscape:export-filename="/home/michael/dev/ods/threesixtygiving/grantnav/grantnav/frontend/static/images/insights_download_icon.png"
+       inkscape:export-xdpi="100.86426"
+       inkscape:export-ydpi="100.86426" />
+    <rect
+       style="opacity:1;fill:#313131;fill-opacity:1;stroke:none;stroke-width:0.22449093;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect851-10"
+       width="1.7930435"
+       height="4.6177816"
+       x="183.93384"
+       y="175.96555"
+       rx="0"
+       ry="0"
+       inkscape:export-filename="/home/michael/dev/ods/threesixtygiving/grantnav/grantnav/frontend/static/images/insights_download_icon.png"
+       inkscape:export-xdpi="100.86426"
+       inkscape:export-ydpi="100.86426" />
+    <rect
+       style="opacity:1;fill:#313131;fill-opacity:1;stroke:none;stroke-width:0.24612685;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect851-3"
+       width="1.5568084"
+       height="6.3930693"
+       x="185.33861"
+       y="174.19028"
+       rx="0"
+       ry="0"
+       inkscape:export-filename="/home/michael/dev/ods/threesixtygiving/grantnav/grantnav/frontend/static/images/insights_download_icon.png"
+       inkscape:export-xdpi="100.86426"
+       inkscape:export-ydpi="100.86426" />
+  </g>
+</svg>
