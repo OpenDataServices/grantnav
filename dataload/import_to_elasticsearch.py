@@ -301,6 +301,8 @@ def import_to_elasticsearch(files, clean):
             continue
 
         def grant_generator():
+            """ Add / Update GrantNav specific optimisation fields """
+
             with open(json_file_name) as fp:
                 stream = ijson.items(fp, 'grants.item')
                 for grant in stream:
@@ -308,10 +310,16 @@ def import_to_elasticsearch(files, clean):
                     grant['_id'] = str(uuid.uuid4())
                     grant['_index'] = ES_INDEX
 
+                    # grant.fundingOrganization.id_and_name
                     update_doc_with_org_mappings(grant, "fundingOrganization", file_name)
+                    # grant.recipientOrganization.id_and_name
                     update_doc_with_org_mappings(grant, "recipientOrganization", file_name)
+                    # grant.title_and_description
                     update_doc_with_title_and_description(grant)
+                    # grant.actualDates.N.[start,end]DateDateOnly
+                    # grant.plannedDates.N.[start,end]DateDateOnly
                     update_doc_with_dateonly_fields(grant)
+                    # grant.currency
                     update_doc_with_currency_upper_case(grant)
 
                     yield grant
