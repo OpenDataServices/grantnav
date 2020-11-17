@@ -68,7 +68,7 @@ def test_home(provenance_dataload, server_url, browser):
     browser.find_element_by_class_name("btn").click()
     browser.get(server_url)
     assert 'Cookies disclaimer' not in browser.find_element_by_tag_name('body').text
-    assert '360Giving Data Standard' in browser.find_element_by_tag_name('body').text
+    assert '180Giving' in browser.find_element_by_tag_name('body').text
     assert '360Giving data standard' not in browser.find_element_by_tag_name('body').text
 
 
@@ -130,7 +130,7 @@ def test_search(provenance_dataload, server_url, browser):
     browser.get(server_url)
     browser.find_element_by_class_name("large-search-icon").click()
     # Total number of expected grants 4,764
-    assert '4,764' in browser.find_element_by_tag_name('body').text
+    assert '1,764' in browser.find_element_by_tag_name('body').text
     assert 'Lloyds Bank Foundation for England and Wales (4,116)' in browser.find_element_by_tag_name('body').text
     assert 'Wolfson Foundation (379)' in browser.find_element_by_tag_name('body').text
     other_currencies_modal = browser.find_element_by_id("other-currencies-modal")
