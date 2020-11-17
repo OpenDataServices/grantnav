@@ -20,6 +20,7 @@ from grantnav import provenance, csv_layout, utils
 from grantnav.search import get_es
 from grantnav.index import get_index
 
+# Filters used for each of the facets that we use. Order of this list must be maintained.
 BASIC_FILTER = [
     {"bool": {"should": []}},  # Funding Orgs
     {"bool": {"should": []}},  # Recipient Orgs
@@ -605,7 +606,7 @@ def non_term_facet_size_from_parameters(request, json_query, agg_name):
 
 
 def create_json_query_from_parameters(request):
-    ''' Transforms the URL GET parameters of the request into an object (json_query) that is to be used by elasticsearch  '''
+    """ Transforms the URL GET parameters of the request into an object (json_query) that is to be used by elasticsearch  """
 
     json_query = copy.deepcopy(BASIC_QUERY)
     json_query["query"]["bool"]["must"]["query_string"]["query"] = request.GET.get('query', '*')
@@ -693,7 +694,7 @@ def non_term_facet_size_from_json_query(parameters, json_query, agg_name):
 
 
 def create_parameters_from_json_query(json_query, **extra_parameters):
-    ''' Transforms json_query (the query that is passed to elasticsearch) to URL GET parameters'''
+    """ Transforms json_query (the query that is passed to elasticsearch) to URL GET parameters """
 
     parameters = {}
 
@@ -743,18 +744,22 @@ def search(request):
     else:
         context['query_string'] = ""
 
+    # URL query backwards compatibility v2
+    # https://github.com/ThreeSixtyGiving/grantnav/issues/571
+    # Allows old json_query get method
     json_query = request.GET.get('json_query') or ""
     try:
         json_query = json.loads(json_query)
     except ValueError:
         json_query = {}
+    # End URL query backwards compatibility v2
 
     if not json_query:
         json_query = create_json_query_from_parameters(request)
 
     default_field = request.GET.get('default_field')
 
-    # URL query backwards compatibility
+    # URL query backwards compatibility v1
     # https://github.com/ThreeSixtyGiving/grantnav/issues/541
     # Subsitute _all for * in default_field
     try:
@@ -763,7 +768,7 @@ def search(request):
             return redirect(request.path + '?' + create_parameters_from_json_query(json_query))
     except KeyError:
         pass
-    # End URL query backwards compatibility
+    # End URL query backwards compatibility v1
 
     text_query = request.GET.get('text_query')
     if text_query is not None:
@@ -890,32 +895,11 @@ def search(request):
         return render(request, "search.html", context=context)
 
 
-def flatten_mapping(mapping, current_path=''):
-    for key, value in mapping.items():
-        sub_properties = value.get('properties')
-        if sub_properties:
-            yield from flatten_mapping(sub_properties, current_path + "." + key)
-        else:
-            yield (current_path + "." + key).lstrip(".")
-
-
-def flatten_schema(schema, path=''):
-    for field, property in schema['properties'].items():
-        if property['type'] == 'array':
-            if property['items']['type'] == 'object':
-                yield from flatten_schema(property['items'], path + '.' + field)
-            else:
-                yield (path + '.' + field).lstrip('.')
-        if property['type'] == 'object':
-            yield from flatten_schema(property, path + '/' + field)
-        else:
-            yield (path + '.' + field).lstrip('.')
-
-
 def grant(request, grant_id):
     query = {"query": {"bool": {"filter":
                 [{"term": {"id": grant_id}}]
     }}}
+    # -1 Show all results for this grant id
     results = get_results(query, -1)
     if results['hits']['total']['value'] == 0:
         raise Http404
@@ -927,6 +911,11 @@ def grant(request, grant_id):
 
 
 def funder(request, funder_id):
+    """
+    Returns grant data based on the funder_id.
+    Used to create summary information to complement grant datatables unless csv or json specified
+    in which case this provides the method of downloading the data.
+    """
 
     [result_format, results_size] = get_request_type_and_size(request)
 
@@ -971,6 +960,10 @@ def funder(request, funder_id):
 
 
 def funder_recipients_datatables(request):
+    """
+     Ajax endpoint for recipients datatables.
+     Provides download endpoint for datatable data as csv or json if csv or json extension present.
+    """
     # Make 100k the default max length. Overrideable by setting ?length= parameter
     MAX_DEFAULT_FUNDER_RECIPIENTS_LENGTH = 100000
 
@@ -1056,6 +1049,10 @@ def funder_recipients_datatables(request):
 
 
 def funders_datatables(request):
+    """
+     Ajax endpoint for funders datatables.
+     Provides download endpoint for datatable data as csv or json if csv or json extension present.
+    """
     match = re.search(r'\.(\w+)$', request.path)
     # Make 100k the default max length. Overrideable by setting ?length= parameter
     MAX_DEFAULT_FUNDERS_LENGTH = 100000
@@ -1161,6 +1158,10 @@ grant_datatables_metadata = {
 
 
 def grants_datatables(request):
+    """" Ajax call for the various grants datatables """
+
+    # Fetch the keys from the grant_datatables_metadata from the GET parameters
+    # fill in the values to create the es query.
     for field, metadata in grant_datatables_metadata.items():
         if field in request.GET:
             value = request.GET[field]
@@ -1215,6 +1216,12 @@ def grants_datatables(request):
 
 
 def recipient(request, recipient_id):
+    """
+    Returns grant data based on the recipient_id.
+    Used to create summary information to complement grant datatables unless csv or json specified
+    in which case this provides the method of downloading the data.
+    """
+
     [result_format, results_size] = get_request_type_and_size(request)
     if result_format != "html":
         recipient_id = re.match(r'(.*)\.\w*$', recipient_id).group(1)
@@ -1256,6 +1263,12 @@ def funders(request):
 
 
 def region(request, region):
+    """
+    Returns grant data based on the region.
+    Used to create summary information to complement grant datatables unless csv or json specified
+    in which case this provides the method of downloading the data.
+    """
+
     [result_format, results_size] = get_request_type_and_size(request)
     if result_format != "html":
         region = re.match(r'(.*)\.\w*$', region).group(1)
@@ -1288,6 +1301,12 @@ def region(request, region):
 
 
 def district(request, district):
+    """
+    Returns grant data based on the district.
+    Used to create summary information to complement grant datatables unless csv or json specified
+    in which case this provides the method of downloading the data.
+    """
+
     [result_format, results_size] = get_request_type_and_size(request)
     if result_format != "html":
         district = re.match(r'(.*)\.\w*$', district).group(1)
